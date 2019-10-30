@@ -31,14 +31,11 @@
         center: [113.397428, 39.90923],
         zoom: 13
     });
-
     //实时路况图层
     var trafficLayer = new AMap.TileLayer.Traffic({
         zIndex: 10
     });
-
     trafficLayer.setMap(map);
-
     var isVisible = true;
     function toggle() {
         if (isVisible) {

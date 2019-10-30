@@ -1,0 +1,25 @@
+.header {
+  position: absolute;
+  top: 0;
+  padding: 0 20px;
+  width: 100%;
+  height: 80px;
+  background: #fff;
+  color: #000;
+  border-bottom: 1px solid red;
+  z-index: 11;
+  & .title {
+    display: inline-block;
+    float: left;
+    width: 60%;
+    height: 80px;
+    line-height: 80px;
+  }
+  & .weather {
+    display: inline-block;
+    float: right;
+    width: 200px;
+    height: 80px;
+    line-height: 80px;
+  }
+}

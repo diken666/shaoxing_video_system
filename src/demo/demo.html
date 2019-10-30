@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./ezuikit.js"></script>
+</head>
+<body>
+    <video
+            id="myPlayer"
+            src="https://hls01open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8"
+            width="400"
+            height="300"
+            poster="[这里可以填入封面图片URL]"
+            autoplay= true
+            controls
+            playsInline
+            webkit-playsinline
+    >
+    </video>
+    <script>
+        // 开始初始化直播源地址
+        var player = new EZUIKit.EZUIPlayer('myPlayer');
+        // 播放
+        player.play();
+        // 结束
+        player.stop();
+    </script>
+</body>
+</html>

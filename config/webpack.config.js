@@ -684,7 +684,10 @@ module.exports = function(webpackEnv) {
       child_process: 'empty',
     },
     externals: {
-      Cesium: 'Cesium'
+      Cesium: 'Cesium',
+      EZUIKit: 'EZUIKit',
+      CesiumHeatmap: 'CesiumHeatmap',
+      AMap: 'AMap'
     },
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

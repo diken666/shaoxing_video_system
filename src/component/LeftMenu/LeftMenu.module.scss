@@ -1,0 +1,24 @@
+
+.leftMenu{
+  position: absolute;
+  padding-top: 80px;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  background: #fff;
+  border-right: blue;
+  z-index: 10;
+  & .item {
+    padding: 0 40px;
+    height: 30px;
+    line-height: 30px;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+  }
+}
+.menuActive{
+  background: #0366d6;
+  color: #fff;
+}
