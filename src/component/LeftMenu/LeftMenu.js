@@ -10,8 +10,7 @@ export default class LeftMenu extends React.Component{
         }
     }
     componentDidMount() {
-        let items = document.getElementsByClassName(style.item);
-        console.log("items-->", items)
+
     }
 
     itemClick(index) {
@@ -19,8 +18,6 @@ export default class LeftMenu extends React.Component{
         for ( let i=0; i<items.length; i++ ) {
             i === index ? items[i].classList.add(style.menuActive) : items[i].classList.remove(style.menuActive)
         }
-        // console.log()
-        // e.classList.add(style.menuActive)
     }
 
     render() {

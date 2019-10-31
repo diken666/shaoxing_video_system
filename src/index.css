@@ -4,6 +4,13 @@ html, body {
   overflow: hidden;
   height: 100%;
   width: 100%;
+  font-size: 16px;
+  font-family: "Microsoft YaHei";
+}
+input {
+  border: none;
+  background: none;
+  outline: none;
 }
 #AMapContainer{
   width: 100%;

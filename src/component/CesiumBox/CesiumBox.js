@@ -152,7 +152,6 @@ export default class CesiumBox extends React.Component {
 
                     >
                     </video>
-
                 </div>
             </div>
         )

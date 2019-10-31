@@ -136,6 +136,7 @@
     ]
   },
   "devDependencies": {
-    "copy-webpack-plugin": "^5.0.4"
+    "copy-webpack-plugin": "^5.0.4",
+    "nodemon": "^1.19.4"
   }
 }
