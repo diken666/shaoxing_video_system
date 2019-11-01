@@ -12,17 +12,17 @@ export default class Header extends React.Component{
         }
     }
     async componentDidMount() {
-        let info = await this.getWeatherInfo();
-        if ( info && info.statusText === "OK" ) {
-            let data = info.data.HeWeather6[0].now;
-            this.setState({
-                weatherInfo: {
-                    condTxt: data["cond_txt"],  // 天气情况
-                    tmp: data["tmp"],           // 温度
-                    windDir: data["wind_dir"]   // 风向
-                }
-            })
-        }
+        // let info = await this.getWeatherInfo();
+        // if ( info && info.statusText === "OK" ) {
+        //     let data = info.data.HeWeather6[0].now;
+        //     this.setState({
+        //         weatherInfo: {
+        //             condTxt: data["cond_txt"],  // 天气情况
+        //             tmp: data["tmp"],           // 温度
+        //             windDir: data["wind_dir"]   // 风向
+        //         }
+        //     })
+        // }
     }
 
     getWeatherInfo() {

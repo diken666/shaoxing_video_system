@@ -1,0 +1,33 @@
+
+.flowStatis{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(240,242,245,1);
+  box-sizing: border-box;
+  padding-top: 80px;
+
+}
+.tableCon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 425px;
+  margin-top: 30px;
+  text-align: center;
+}
+.tableLeft{
+  display: inline-block;
+  height: 100%;
+  width: 785px;
+  border: 1px solid #000000;
+}
+.tableRight{
+  display: inline-block;
+  height: 100%;
+  width: 1045px;
+  margin-left: 30px;
+  border: 1px solid #000000;
+}

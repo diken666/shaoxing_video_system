@@ -1,0 +1,43 @@
+
+.weatherBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 120px;
+  box-sizing: border-box;
+  padding: 0 17px;
+  color: #333;
+}
+.title {
+  height: 35px;
+  line-height: 35px;
+  font-size: 20px;
+  text-align: right;
+  margin-bottom: 12px;
+}
+.ctn {
+  display: flex;
+  justify-items: center;
+}
+.picture {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  vertical-align: center;
+}
+.ctxBox {
+  display: inline-block;
+  width: 90px;
+  height: 38px;
+  border-left: 1px solid rgba(51,51,51,1);
+  margin-left: 9px;
+  vertical-align: center;
+  padding-left: 12px;
+}
+.ctx {
+  display: block;
+  height: 19px;
+  line-height: 19px;
+  font-size: 12px;
+  text-align: left;
+}

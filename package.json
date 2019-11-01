@@ -19,6 +19,9 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
+    "element": "^0.1.4",
+    "element-react": "^1.4.34",
+    "element-theme-default": "^1.4.13",
     "eslint": "^6.1.0",
     "eslint-config-react-app": "^5.0.2",
     "eslint-loader": "3.0.2",
@@ -137,6 +140,7 @@
   },
   "devDependencies": {
     "copy-webpack-plugin": "^5.0.4",
-    "nodemon": "^1.19.4"
+    "nodemon": "^1.19.4",
+    "react-hot-loader": "^4.12.15"
   }
 }
