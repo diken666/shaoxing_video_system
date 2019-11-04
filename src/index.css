@@ -1,11 +1,13 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
   height: 100%;
   width: 100%;
   font-size: 16px;
   font-family: "Microsoft YaHei";
+}
+body{
+  overflow: hidden;
 }
 input {
   border: none;
