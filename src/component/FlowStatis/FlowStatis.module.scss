@@ -26,6 +26,12 @@
   background:rgba(255,255,255,1);
   box-shadow:0 3px 20px rgba(0,0,0,0.1);
   border-radius: 5px;
+
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #38C082;
+  }
 }
 .left {
   width: 785px;
@@ -103,7 +109,6 @@
   position: relative;
   height: 840px;
   margin-top: 50px;
-  border: 1px solid #000;
 }
 .bgBox{
   position: relative;
@@ -157,6 +162,12 @@
   height: 475px;
   margin: 0 45px;
   background: #fff;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  &:hover {
+    border: 1px solid #38C082;
+  }
 }
 
 .bottomTable{
