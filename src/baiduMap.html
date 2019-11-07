@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/TrafficControl/1.4/src/TrafficControl_min.js"></script>
+</head>
+<body>
+
+    <div style="width:100%;height:800px;border:1px solid gray" id="container"></div>
+    <script>
+        var map = new BMap.Map("container");
+        // map.centerAndZoom(new BMap.Point(104.06, 30.67), 12);
+        map.centerAndZoom(new BMap.Point(120.06, 30.67), 12);
+        var ctrl = new BMapLib.TrafficControl({
+            showPanel: true //是否显示路况提示面板
+        });
+        map.addControl(ctrl);
+        ctrl.setAnchor(BMAP_ANCHOR_BOTTOM_RIGHT);
+    </script>
+</body>
+</html>

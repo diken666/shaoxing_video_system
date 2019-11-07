@@ -2,11 +2,11 @@
 import React from 'react';
 import style from './FlowStatis.module.scss';
 import echarts from 'echarts';
-import { Table, Divider } from 'antd'
+import { Table } from 'antd'
 
 import options from './options'
 
-const { Column, ColumnGroup } = Table;
+const { Column } = Table;
 
 export default class FlowStatis extends React.Component {
     constructor( props ) {

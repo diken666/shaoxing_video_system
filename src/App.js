@@ -7,6 +7,7 @@ import ViewList from "./component/ViewList/ViewList";
 import RoadCondition from "./component/RoadCondition/RoadCondition";
 import FlowStatis from "./component/FlowStatis/FlowStatis";
 import FlowStatisAnalyse from "./component/FlowStatisAnalyse/FlowStatisAnalyse";
+import PeopleFlow from "./component/PeopleFlow/PeopleFlow";
 
 
 class App extends React.Component{
@@ -37,6 +38,8 @@ class App extends React.Component{
               return <ViewList />;
           case '实时路况':
               return <RoadCondition />;
+          case '实时人流量':
+              return <PeopleFlow />
           case '人流量变化分析':
               return <FlowStatisAnalyse/>;
           case '人流量统计':

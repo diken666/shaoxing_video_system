@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src= "http://www.map.zj.cn:8899/geoserver/zjplatform/RTIC_POLYLINE/ows?LAYERS=RTIC_POLYLINE&VERSION=1.1.1&TRANSPARENT=TRUE&SERVICE=WMS&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A4326&BBOX=120.60398,28.04172,120.68123,28.06596&WIDTH=256&HEIGHT=256" alt="">
+    <script>
+        window.onload = function(){
+
+            // let img = new Image();
+            // img.src = "https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1537549551&di=3f8d4d76679adcae225387f7d6b199aa&src=http://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/lvpics/h=800/sign=b49dc48f8718367ab28972dd1e728b68/9922720e0cf3d7ca7f0736d0f31fbe096a63a9a6.jpg";
+
+            // img.onload = function(){
+            //     console.log(img.src);
+            // };
+            // img.onerror = function (error){
+            //     console.log(error)
+            // }
+
+
+            var url = "http://www.map.zj.cn:8899/geoserver/zjplatform/RTIC_POLYLINE/ows?LAYERS=RTIC_POLYLINE&VERSION=1.1.1&TRANSPARENT=TRUE&SERVICE=WMS&REQUEST=GetMap&STYLES=&FORMAT=image%2Fpng&SRS=EPSG%3A4326&BBOX=120.60398,28.04172,120.68123,28.06596&WIDTH=256&HEIGHT=256";//这是站内的一张图片资源，采用的相对路径
+            convertImgToBase64(url, function(base64Img){
+                //转化后的base64
+                let base64 = base64Img;
+                console.log(base64)
+            });
+
+            //实现将项目的图片转化成base64
+            function convertImgToBase64(url, callback, outputFormat){
+                var canvas = document.createElement('CANVAS'),
+                    ctx = canvas.getContext('2d'),
+                    img = new Image;
+                img.crossOrigin = 'Anonymous';
+                img.onload = function(){
+                    canvas.height = img.height;
+                    canvas.width = img.width;
+                    ctx.drawImage(img,0,0);
+                    var dataURL = canvas.toDataURL(outputFormat || 'image/png');
+                    callback.call(this, dataURL);
+                    canvas = null;
+                };
+                img.src = url;
+            }
+
+        };
+
+
+    </script>
+</body>
+</html>
