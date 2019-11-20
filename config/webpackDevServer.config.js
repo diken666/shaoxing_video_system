@@ -81,6 +81,8 @@ module.exports = function(proxy, allowedHost) {
       disableDotRule: true,
     },
     public: allowedHost,
+
+      // 新添加的配置
     proxy:{
       '/pic':{
         target:'http://localhost:3000',

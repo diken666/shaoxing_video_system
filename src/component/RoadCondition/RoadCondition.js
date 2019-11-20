@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './RoadCondition.module.scss'
 import Cesium from 'Cesium';
-import Common from "../common";
+import Common from "../Common";
 import axios from 'axios'
 
 export default class RoadCondition extends React.Component {
@@ -34,44 +34,44 @@ export default class RoadCondition extends React.Component {
        }, ()=>{
            Common.compassBind(this);
            this.addRoadPic(viewer).then(()=>{
-               // this.roadUpdate(viewer, this.state.entityId).then()
+           //     this.roadUpdate(viewer, this.state.entityId).then()
            });
        });
 
     }
 
-    // async roadUpdate(viewer, id) {
-    //     while(this.state.update) {
-    //         await this.updateInfo(viewer, id);
-    //     }
-    // }
+    async roadUpdate(viewer, id) {
+        while(this.state.update) {
+            await this.updateInfo(viewer, id);
+        }
+    }
 
-    // updateInfo(viewer, id) {
-    //     this.removeEntity(viewer, id);
-    //     this.addRoadPic(viewer).then();
-    //     return new Promise((resolve)=>{
-    //         setTimeout(()=>{
-    //             console.log(Math.random());
-    //             resolve();
-    //         }, 10000)
-    //     })
-    // }
+    updateInfo(viewer, id) {
+        this.removeEntity(viewer, id);
+        this.addRoadPic(viewer).then();
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                console.log(Math.random());
+                resolve();
+            }, 1000)
+        })
+    }
 
-    // removeEntity(viewer, id){
-    //     viewer = viewer.entities.removeById(id);
-    //     this.setState({
-    //         viewer,
-    //         entityId: ""
-    //     })
-    // }
+    removeEntity(viewer, id){
+        viewer = viewer.entities.removeById(id);
+        this.setState({
+            viewer,
+            entityId: ""
+        })
+    }
 
     getRoadPicUrl(url){
         return axios.get(url);
     }
 
     async addRoadPic(viewer) {
-        let url = ( await this.getRoadPicUrl(this.state.picUrl) ).data.url;
-        console.log(viewer);
+        // let url = ( await this.getRoadPicUrl(this.state.picUrl) ).data.url;
+        // console.log(viewer);
         let entity = viewer.entities.add({
             polygon : {
                 hierarchy : new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray([
@@ -95,7 +95,7 @@ export default class RoadCondition extends React.Component {
     render() {
         return (
             <div className={style.roadCondition}>
-                <div id="cesiumContainer">
+                <div id="cesiumContainer" className={style.fillAll}>
                     <div id="compass" className={style.compass} />
                 </div>
             </div>

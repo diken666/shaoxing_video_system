@@ -39,7 +39,7 @@ export default class Common {
     }
 
     static CesiumInit() {
-        // Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5MzllZDg3OS1hMzQyLTRkNjMtOGFiMC01Y2Q5NWNkYTFjMDUiLCJpZCI6MTQ5NjAsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzMwMDY2ODF9.EZTxd1CrxqNMb_pU-x0hsT_t0XR4ck0QCMW6L3lLhJw';
+        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI5MzllZDg3OS1hMzQyLTRkNjMtOGFiMC01Y2Q5NWNkYTFjMDUiLCJpZCI6MTQ5NjAsInNjb3BlcyI6WyJhc3IiLCJnYyJdLCJpYXQiOjE1NzMwMDY2ODF9.EZTxd1CrxqNMb_pU-x0hsT_t0XR4ck0QCMW6L3lLhJw';
         const viewer = new Cesium.Viewer("cesiumContainer", {
             animation: false, //是否显示动画控件
             shouldAnimate : true,
@@ -69,4 +69,6 @@ export default class Common {
         });
         return viewer;
     }
+
+
 }

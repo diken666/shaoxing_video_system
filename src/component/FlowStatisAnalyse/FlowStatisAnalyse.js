@@ -3,7 +3,7 @@ import style from './FlowStatisAnalyse.module.scss';
 import { DatePicker, Slider , LocaleProvider} from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
-import Common from "../common";
+import Common from "../Common";
 const { RangePicker } = DatePicker;
 const dateFormat = 'YYYY/MM/DD';
 
@@ -38,7 +38,7 @@ export default class FlowStatisAnalyse extends React.Component {
     render() {
         return (
             <div className={style.flowStatisAnalyse}>
-                <div id="cesiumContainer">
+                <div id="cesiumContainer" className={style.fillAll}>
                     <div id="compass" className={style.compass} />
                     <div className={style.bottomBox}>
                         <div className={style.dateCon}>

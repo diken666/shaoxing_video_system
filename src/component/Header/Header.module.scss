@@ -1,5 +1,8 @@
+
 .header {
   position: fixed;
+  display: flex;
+  justify-content: space-around;
   top: 0;
   padding: 0 20px;
   width: 100%;
@@ -16,6 +19,7 @@
     width: 30%;
     height: 80px;
     line-height: 80px;
+    overflow: hidden;
   }
   & .titleCamera{
     display: inline-block;
@@ -78,11 +82,13 @@
 }
 
 .rightBox {
-  display: inline-block;
-  float: right;
-  width: 70%;
+  display: flex;
+  margin-right: 0;
+  justify-content: flex-end;
+  align-items: center;
+  width: 65%;
   height: 100%;
-  text-align: right;
+
   & .item {
     position: relative;
     display: inline-block;
