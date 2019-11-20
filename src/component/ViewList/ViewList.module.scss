@@ -1,0 +1,390 @@
+
+.viewList{
+  padding-top: 80px;
+  width: 100%;
+  height: 100%;
+}
+.fillAll {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.video {
+  display: block;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 10;
+  right: 20px;
+  &:nth-child(1) {
+    top: 100px;
+  }
+  &:nth-child(2) {
+    top: 300px;
+  }
+}
+.leftBox {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-content:space-around;
+  //align-items: flex-start;
+  ////justify-content: space-around;
+  padding-top: 80px;
+  top: 0;
+  width: 280px;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  user-select: none;
+  background:hsla(0,0%,100%,.95) border-box;
+  box-shadow: 0 0 10px hsla(0,0%,100%,.95);
+  box-sizing: border-box;
+
+  & .title {
+    position: relative;
+    margin: 17px auto 23px auto;
+    width: 100%;
+    height: 36px;
+  }
+  & .title span {
+    position: relative;
+    width: 70px;
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 2px dotted rgba(56, 194, 131, 1);
+    font-weight: bold;
+  }
+}
+.item {
+  position: relative;
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  //justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0 30px;
+  overflow: hidden;
+  text-align: left;
+
+  &:hover {
+    background: rgba(218,218,218,0.8);
+  }
+  &:hover .leftLine{
+    display: block;
+  }
+  & .icon {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    background: url("../img/camera_black.png");
+    background-size: 23px;
+    margin-right: 8px;
+    flex-shrink: 0;
+  }
+  & .ctx {
+    display: inline-block;
+    font-size:16px;
+    font-family:Noto Sans S Chinese;
+    font-weight:400;
+    line-height:27px;
+    color:rgba(17,17,17,1);
+    flex-shrink: 0;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  & .leftLine {
+    position: absolute;
+    display: none;
+    left: 0;
+    width: 6px;
+    height: 50px;
+    background: rgba(56, 194, 131, 1);
+    box-shadow: 0 0 10px rgba(56, 194, 131, 1);
+  }
+}
+
+.active {
+  background:rgba(218,218,218,0.8);
+
+  & .leftLine{
+    display: block;
+  }
+}
+.searchBox{
+  position: absolute;
+  top: 113px;
+  right: 20px;
+
+  & .searchIconCon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: linear-gradient(180deg,rgba(253,91,93,1) 0%,rgba(255,122,122,1) 100%);
+    cursor: pointer;
+    z-index: 10;
+  }
+  & .searchIcon{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    background: url("../img/search.png");
+    background-size: 20px 20px;
+    z-index: 6
+  }
+
+  & .searchCtx{
+    display: block;
+    position: absolute;
+    //width: 207px;
+    width: 0;
+    height: 40px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background: hsla(0,0%,100%,.95) border-box;
+    z-index: 5;
+    overflow: hidden;
+    text-align: left;
+    transition: all .3s ease;
+  }
+}
+.searchCtx input {
+  margin-left: 50px;
+  width: 130px;
+  height: 100%;
+  line-height: 40px;
+}
+.searchBox:hover .searchCtx{
+  width: 207px;
+}
+.viewBar{
+  position: absolute;
+  display: flex;
+  top: 100px;
+  left: 50%;
+  width: 200px;
+  height: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: hsla(0,0%,100%,.95) border-box;
+  z-index: 20;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  user-select: none;
+  color: #666;
+
+  & .left, .right {
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+  }
+}
+.viewBar .barActive{
+  color: #fff;
+  background: rgba(56, 194, 131, 1);
+}
+.singleVideoShow{
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: none;
+  object-fit: fill
+}
+.singleVideoTitle{
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  text-shadow:0 0 6px rgba(0,0,0,1);
+  font-weight: bold;
+  color: #fff;
+}
+.videoCon {
+  position: absolute;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 240px;
+  z-index: 100;
+  border-radius: 3px;
+  border: 1px solid rgba(253,91,93,1);
+  background: #fff ;
+
+  &:hover {
+    cursor: move;
+  }
+}
+.loading{
+  display: block;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  background: url("../img/loading.png");
+  background-size: 50px;
+  animation: rotate 1s infinite;
+  z-index: -1;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.closeIcon {
+  position: absolute;
+  top: -35px;
+  left: -35px;
+  display: block;
+  width: 72px;
+  height: 72px;
+  background: url("../img/close_outside.png");
+  background-size: 72px 72px;
+  cursor: pointer;
+  z-index: 20;
+
+  & .closeIconInside{
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 42px;
+    height: 42px;
+    background: url("../img/close_inside.png");
+    background-size: 42px 42px;
+
+  }
+
+}
+
+.compass {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+  width: 100px;
+  height: 100px;
+  background: url("../img/compass.png");
+  background-size: 100px 100px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.listView {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:rgba(240,242,245,1);
+  z-index: -1;
+  box-sizing: border-box;
+  padding: 80px 40px 0 300px;
+}
+.itemCon {
+  position: relative;
+  width: 100%;
+  //height: 620px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background:rgba(255,255,255,0.3);
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background:#bbb;
+  }
+}
+
+.bigViewShowCon{
+  position: relative;
+  display: none;
+}
+.bigViewShow{
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  width: 1580px ;
+  height: 700px;
+  object-fit: fill;
+}
+//@keyframes bigVideoShow {
+//  from{
+//    //transform: scale(0);
+//    width: 0;
+//    left: 0;
+//  }
+//  to{
+//    //transform: scale(1);
+//    width: 1660px ;
+//    height: 700px;
+//  }
+//}
+.btnBack{
+  position: absolute;
+  display: none;
+  top: 30px;
+  right: 40px;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  color: #333;
+  background:rgba(243,245,249,1);
+  border-radius: 15px;
+  border:1px solid rgba(222,225,229,1);
+  text-align: center;
+  cursor: pointer;
+
+  &:hover{
+    background:rgba(243,245,249,1);
+    box-shadow:0 0 6px rgba(0,0,0,0.16);
+  }
+}
+.paginationCon{
+  position: absolute;
+  top: 800px;
+  right: 40px;
+  //margin: 10px 0 0 0;
+  text-align: right;
+  height: 35px;
+  line-height: 35px;
+}
+.pagination{
+  &:hover {
+    color: #FD5B5D;
+  }
+}
+.listItemTitle {
+  position: absolute;
+  bottom: 0;
+  padding-left: 18px;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  border-left: 5px solid rgba(56, 194, 131, 1);
+}
