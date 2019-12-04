@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './ViewList.module.scss';
 import Cesium from "Cesium";
-import EZUIKit from 'EZUIKit';
+// import EZUIKit from 'EZUIKit';
 
 import WeatherBox from "../WeatherBox/WeatherBox";
 import Common from "../Common";
@@ -109,15 +109,56 @@ export default class ViewList extends React.Component {
         this.hideBigVideoShow = this.hideBigVideoShow.bind(this);
     }
 
+    componentWillUnmount() {
+
+        this.setState({
+            viewer: null
+        })
+    }
+
     componentDidMount() {
         this.setState({
             searchView: [...this.state.cameraView]
         });
         let viewer = Common.CesiumInit();
+        viewer.camera.setView({
+            destination : Cesium.Cartesian3.fromDegrees(120.64799245639196, 28.043834361592527, 300),
+        });
+
+        let vid = document.getElementById("myPlay");
+        vid.play();
+
+        // var position = Cesium.Cartesian3.fromDegrees(-75, 40);
+        //
+        // var orientation = Cesium.Transforms.headingPitchRollQuaternion(
+        //     position,
+        //     Cesium.Math.toRadians(0.0),
+        //     Cesium.Math.toRadians(0.0),
+        //     Cesium.Math.toRadians(90.0)
+        // );
+
+        let a = viewer.entities.add({
+            polygon : {
+                hierarchy : new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray([
+                    120.64778709114539, 28.043759594298944,
+                    120.64813762335626, 28.043759594298944,
+                    120.64813762335626, 28.044004857041912,
+                    120.64778709114539, 28.044004857041912,
+                ])),
+                heading: Cesium.Math.toRadians(90.0),
+                material : vid,
+                roll: Cesium.Math.toRadians(180),
+                clampToGround : true,
+                classificationType: Cesium.ClassificationType.BOTH
+            }
+        });
+        console.log(a)
+
+
         // todo 使用时这里解除注释
         // let vid = document.getElementById("myPlay");
         // let player = new EZUIKit.EZUIPlayer("myPlay");
-        // 播放
+        // // 播放
         // player.play();
         // viewer.entities.add({
         //     polygon : {
@@ -442,6 +483,13 @@ export default class ViewList extends React.Component {
                     {/*       autoPlay={true} loop={true} controls>*/}
                     {/*    <source src="https://hls01open.ys7.com/openlive/f01018a141094b7fa138b9d0b856507b.m3u8" type="video/mp4"/>*/}
                     {/*</video>*/}
+                    <video id="myPlay"
+                           className={style.video}
+                           autoPlay={true} loop={true} controls muted
+                           // style={{transform: "rotate(30deg)"}}
+                    >
+                        <source src="./road3.mp4" type="video/mp4"/>
+                    </video>
                     {
                         this.cameraVideoRender(this.state.singleVideoState, this.state.singleVideoSrc, this.state.singleVideoIndex )
                     }

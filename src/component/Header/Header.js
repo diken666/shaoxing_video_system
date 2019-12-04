@@ -38,7 +38,6 @@ export default class Header extends React.Component{
     render() {
         return (
             <div className={style.header}>
-
                         <div className={style.title}>
                             <i className={style.titleCamera} />
                             <span className={style.titleCtx}>{this.state.title}</span>

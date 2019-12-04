@@ -65,6 +65,19 @@
   background-size: 13px;
 }
 .sliderCon{
+  position: relative;
   display: inline-block;
   width: 1100px;
+}
+.time {
+  position: absolute;
+  bottom: -10px;
+  font-size: 14px;
+  color: #fff;
+}
+.start {
+  left:0;
+}
+.end {
+  right: 0;
 }

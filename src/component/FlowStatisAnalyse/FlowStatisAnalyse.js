@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './FlowStatisAnalyse.module.scss';
-import { DatePicker, Slider , LocaleProvider} from 'antd';
+import { DatePicker, Slider , ConfigProvider} from 'antd';
 import zh_CN from 'antd/lib/locale-provider/zh_CN';
 import 'moment/locale/zh-cn';
 import Common from "../Common";
@@ -17,6 +17,7 @@ export default class FlowStatisAnalyse extends React.Component {
             videoPlaying: false
         }
     }
+
     componentDidMount() {
        let viewer = Common.CesiumInit();
         this.setState({
@@ -25,6 +26,13 @@ export default class FlowStatisAnalyse extends React.Component {
             Common.compassBind(this);
         })
     }
+
+    componentWillUnmount() {
+        this.setState({
+            viewer: null
+        })
+    }
+
     disabledDate(current){
         // 不能选今天和今天之前的日期
         return current > Date.now();
@@ -42,15 +50,17 @@ export default class FlowStatisAnalyse extends React.Component {
                     <div id="compass" className={style.compass} />
                     <div className={style.bottomBox}>
                         <div className={style.dateCon}>
-                            <LocaleProvider locale={zh_CN}>
+                            <ConfigProvider locale={zh_CN}>
                                 <RangePicker size={"default"} format={dateFormat} disabledDate={(current)=>this.disabledDate(current)}/>
-                            </LocaleProvider>
+                            </ConfigProvider>
                         </div>
                         <div className={style.playBox} onClick={()=>this.videoStateChange()}>
                             <i className={[style.icon, this.state.videoPlaying ? style.stop : style.play ].join(" ")}/>
                         </div>
                         <div className={style.sliderCon}>
-                            <Slider defaultValue={30} />
+                            <Slider defaultValue={30} tooltipVisible={false} />
+                            <span className={[style.time, style.start].join(' ')}>0:00</span>
+                            <span className={[style.time, style.end].join(' ')}>12:00</span>
                         </div>
                     </div>
                 </div>

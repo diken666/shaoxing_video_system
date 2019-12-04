@@ -24,12 +24,12 @@
   & .titleCamera{
     display: inline-block;
     position: absolute;
-    top: 15px;
-    left: 15px;
-    width: 45px;
-    height: 42px;
-    background: url("../img/camera.png");
-    background-size: 45px 42px;
+    top: 0px;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: url("../img/camera.gif");
+    background-size: 80px;
   }
   & .titleCtx{
     display: inline-block;

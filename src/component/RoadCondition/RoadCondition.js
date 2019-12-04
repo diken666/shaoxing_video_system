@@ -16,6 +16,12 @@ export default class RoadCondition extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+        this.setState({
+            viewer: null
+        })
+    }
+
    componentDidMount() {
         let viewer = Common.CesiumInit();
         viewer.cesiumWidget.screenSpaceEventHandler.setInputAction((e)=> {
